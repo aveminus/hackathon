@@ -22,7 +22,7 @@
             <tbody>
               <tr>
                 <td>{{ forloop.counter }}</td>
-                  <td>{{ commit.avatar }}</td>
+                  <td><img src="{{ commit.avatar }}" height="42" width="42"></td>
                 <td>{{ commit.author }}</td>
                 <td>{{ commit.email }}</td>
                 <td>{{ commit.message }}</td>
