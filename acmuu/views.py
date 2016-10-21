@@ -1,7 +1,7 @@
 from django.shortcuts import render, reverse
 from django.http import HttpResponse
 from .models import Repo
-from .forms import repoForm
+from .forms import repoform
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect
 import requests
@@ -16,9 +16,9 @@ def index(request):
 
 def add_repo(request):
     if request.method == 'GET':
-        form = repoForm.RepoForm()
+        form = repoform.RepoForm()
     else:
-        form = repoForm.RepoForm(request.POST)
+        form = repoform.RepoForm(request.POST)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect(reverse('acmuu:index'))
