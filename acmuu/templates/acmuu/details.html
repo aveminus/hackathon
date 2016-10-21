@@ -1,15 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-{% for data in details %}
-    {{data.type}}
-    {{data.time}}
-    <br>
-{% endfor %}
+{% extends "acmuu/base.html" %}
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--{% for data in details %}-->
+    <!--{{data.type}}-->
+    <!--{{data.time}}-->
+    <!--<br>-->
+<!--{% endfor %}-->
 
-</body>
-</html>
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+{% block content %}
+<div class="container theme-showcase" role="main">
+    <div class="page-header">
+      <h1>ACMUU<small>These are the recent commits</small></h1>
+    </div>
+
+    <div class="col-md-10">
+          <table class="table">
+              <thead>
+              <tr>
+                <th>#</th>
+                <th>Event type</th>
+                <th>Time stamp</th>
+              </tr>
+            </thead>
+    {% for data in details %}
+
+            <tbody>
+              <tr>
+                <td>{{ forloop.counter }}</td>
+                  <td>{{ data.type }}</td>
+                <td>{{ data.time }}</td>
+              </tr>
+    {% endfor %}
+              </tbody>
+          </table>
+        </div>
+</div>
+{% endblock %}
