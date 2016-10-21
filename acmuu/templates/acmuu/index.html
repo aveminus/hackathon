@@ -11,10 +11,10 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <title>index</title>
-<div class="page-header">
-  <h1 align="center"> ACMUU: Follow projects easily </h1>
-</div>
-  &nbsp;
+<!--<div class="page-header">-->
+  <!--<h1 align="center"> ACMUU: Follow projects easily </h1>-->
+<!--</div>-->
+  <!--&nbsp;-->
 <style>
 body {
     background-color: #F5E6E3;
@@ -22,6 +22,11 @@ body {
 </style>
 </head>
 <body>
+<div class="container theme-showcase" role="main">
+    <div class="page-header">
+      <h1>ACMUU<small>Follow projects easily</small></h1>
+    </div>
+
 <div class="row">
     <div class="col-md-4">
 
@@ -43,11 +48,11 @@ body {
         {%for p in projects %}
             <h1>{{ p.path }}</h1>
             <a href="/acmuu/{{p.path}}/commits">Commits</a>
-            <a href="/acmuu/{{p.path}}/events">Events</a>
+            <!--<a href="/acmuu/{{p.path}}/detail">Events</a>-->
         {%endfor%}
     </div>
 </div>
-
+</div>
 </body>
 
 </html>
