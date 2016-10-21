@@ -40,6 +40,11 @@ body {
     </div>
     <div class="col-md-8">
         <a href="/acmuu/add" class="btn btn-info" role="button">Add</a>
+        {%for p in projects %}
+            <h1>{{ p.path }}</h1>
+            <a href="/acmuu/{{p.path}}/commits">Commits</a>
+            <a href="/acmuu/{{p.path}}/events">Events</a>
+        {%endfor%}
     </div>
 </div>
 
