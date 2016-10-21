@@ -14,7 +14,7 @@ urlpatterns = [
     url(r'^(?P<username>[\w-]+)/$', views.user, name='user'),
 
     # ex: /acmuu/<username>/
-    url(r'^(?P<username>[\w-]+)/(?P<repo>[\w-]+)/$', views.detail, name='detail'),
+    url(r'^(?P<username>[\w-]+)/(?P<repo>[\w-]+)/details/$', views.detail, name='detail'),
 
     # # ex: /acmuu/<repo-id>/events
     # url(r'^(?P<repo_name>[a-zA-Z\/]+)/events$', views.events, name='events'),
