@@ -4,8 +4,9 @@ from .models import Repo
 from django.shortcuts import get_object_or_404
 
 def index(request):
-
-    return HttpResponse("Index.")
+    context = {'projects': Repo.objects.all(),
+               'total':Repo.objects.all().count()}
+    return render(request, 'acmuu/index.html', context)
 
 def detail(request, username, repo):
     repo = get_object_or_404(Repo, path="%s/%s" % (username, repo))
