@@ -26,6 +26,7 @@ def add_repo(request):
 
 def detail(request, username, repo):
     url = "https://api.github.com/repos/kikofernandez/hackathon/events"
+    # url = "https://api.github.com/repos/active-objects/2015-active-objects-survey/events"
     data = json.load(urllib2.urlopen(url))
     list_details = []
     for i in range(10):
@@ -35,9 +36,11 @@ def detail(request, username, repo):
             type = detail['type']
             time = detail['created_at']
             user = detail['actor']['login']
+            avatar = detail['actor']['avatar_url']
             list_details.append({'type': type,
                                  'time': time,
-                                 'user': user
+                                 'user': user,
+                                 'avatar': avatar
                                  })
         except:
             None
