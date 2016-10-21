@@ -1,0 +1,35 @@
+{% extends "acmuu/base.html" %}
+
+{% block content %}
+<div class="container theme-showcase" role="main">
+    <div class="page-header">
+      <h1>ACMUU<small>These are the recent commits</small></h1>
+    </div>
+
+    <div class="col-md-10">
+          <table class="table">
+              <thead>
+              <tr>
+                <th>#</th>
+                <th>Avatar</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Message</th>
+              </tr>
+            </thead>
+    {% for commit in commits %}
+
+            <tbody>
+              <tr>
+                <td>{{ forloop.counter }}</td>
+                  <td>{{ commit.avatar }}</td>
+                <td>{{ commit.author }}</td>
+                <td>{{ commit.email }}</td>
+                <td>{{ commit.message }}</td>
+              </tr>
+    {% endfor %}
+              </tbody>
+          </table>
+        </div>
+</div>
+{% endblock %}

@@ -20,6 +20,6 @@ from acmuu import urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^acmuu/', include('acmuu.urls')),
+    url(r'^acmuu/', include('acmuu.urls', namespace='acmuu')),
     url('', include('social.apps.django_app.urls', namespace='social'))
 ]

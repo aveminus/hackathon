@@ -20,3 +20,4 @@ class Repo(models.Model):
     repo = models.CharField(max_length=2, choices=REPOCHOICE)
     path = models.CharField(max_length=100, help_text="username/project")
 
+

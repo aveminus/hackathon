@@ -1,0 +1,20 @@
+{% extends "acmuu/base.html" %}
+
+{% block content %}
+
+<div class="container theme-showcase" role="main">
+    <div class="page-header">
+      <h1>ACMUU<small>Add new project</small></h1>
+    </div>
+
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+    <form action="{% url 'acmuu:add_repo' %}" method="post">
+    {% csrf_token %}
+        {% for f in form %}
+            {{ f }}
+        {% endfor %}
+    <input type="submit" value="Add" />
+    </form>
+</div>
+{% endblock %}
