@@ -6,6 +6,8 @@ from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect
 import requests
 import urllib2
+import json
+import urllib2
 
 def index(request):
     context = {'projects': Repo.objects.all(),
@@ -23,8 +25,24 @@ def add_repo(request):
     return render(request, 'acmuu/repoForm.html', { 'form': form, })
 
 def detail(request, username, repo):
-    repo = get_object_or_404(Repo, path="%s/%s" % (username, repo))
-    return HttpResponse("You're looking at user: %s, %s." % (username, repo.path))
+    url = "https://api.github.com/repos/kikofernandez/hackathon/events"
+    data = json.load(urllib2.urlopen(url))
+    list_details = []
+    for i in range(10):
+        try:
+            detail = data[i]
+
+            type = detail['type']
+            time = detail['created_at']
+            list_details.append({'type': type,
+                                 'time': time
+                                 })
+        except:
+            None
+            # print str(list_commits)
+    print str(list_details)
+    print str(data)
+    return render(request, "acmuu/details.html", {'details':list_details})
 
 def user(request, username):
     print username
