@@ -25,8 +25,9 @@ def add_repo(request):
     return render(request, 'acmuu/repoForm.html', { 'form': form, })
 
 def detail(request, username, repo):
-    url = "https://api.github.com/repos/kikofernandez/hackathon/events"
+    #url = "https://api.github.com/repos/kikofernandez/hackathon/events"
     # url = "https://api.github.com/repos/active-objects/2015-active-objects-survey/events"
+    url = "https://api.github.com/repos/" + username + "/" + repo +"/events"
     data = json.load(urllib2.urlopen(url))
     list_details = []
     for i in range(10):
