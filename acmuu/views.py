@@ -34,8 +34,10 @@ def detail(request, username, repo):
 
             type = detail['type']
             time = detail['created_at']
+            user = detail['actor']['login']
             list_details.append({'type': type,
-                                 'time': time
+                                 'time': time,
+                                 'user': user
                                  })
         except:
             None

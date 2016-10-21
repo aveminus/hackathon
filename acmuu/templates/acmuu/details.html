@@ -31,6 +31,8 @@
                 <th>#</th>
                 <th>Event type</th>
                 <th>Time stamp</th>
+                  <th>User</th>
+
               </tr>
             </thead>
     {% for data in details %}
@@ -40,6 +42,8 @@
                 <td>{{ forloop.counter }}</td>
                   <td>{{ data.type }}</td>
                 <td>{{ data.time }}</td>
+                              <td>{{ data.user }}</td>
+
               </tr>
     {% endfor %}
               </tbody>
